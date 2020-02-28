@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 4200;
 //       Database
 //-----------------------
 // TODO Reactivate once our index.js file is completed / db is setup
-// const db = require('./models');
+const db = require('./models');
 
 //-----------------------
 //     Setup Routes
