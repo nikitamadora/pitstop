@@ -117,4 +117,20 @@ db.City.deleteMany({}, (err, cities) => {
           console.log('Recreated all cities');
           console.log(`Created ${cities.length} cities`);
      });
+
+     db.Restroom.deleteMany({}, (err, restrooms) => {
+          if (err) {
+               console.log(err);
+               return;
+          }
+          console.log('Removed all restrooms');
+          db.Restroom.create(restrooms_list, (err, restrooms) => {
+               if (err) {
+                    console.log(err);
+                    return;
+               }
+               console.log('Recreated all restrooms');
+               console.log(`Created ${restrooms.length} restrooms`);
+          });
+     });
 });
