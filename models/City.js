@@ -12,8 +12,7 @@ const CitySchema = new mongoose.Schema({
           type: String,
           required: true
      },
-     restrooms: [Restroom.Schema],
-     geolocation: [Number]
+     restrooms: [Restroom.Schema]
 });
 
 module.exports = mongoose.model('City', CitySchema);
