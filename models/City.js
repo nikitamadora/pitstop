@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-// TODO Reactivate once we have our Restroom model
-// const Restroom = require('./Restroom');
+const Restroom = require('./Restroom');
 
 const CitySchema = new mongoose.Schema({
      cityName: {
@@ -12,7 +11,7 @@ const CitySchema = new mongoose.Schema({
           type: String,
           required: true
      },
-     restrooms: [Restroom.Schema]
+     restrooms: [Restroom.schema]
 });
 
 module.exports = mongoose.model('City', CitySchema);
