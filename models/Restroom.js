@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 
 const RestroomSchema = new mongoose.Schema({
-     street: {
+     locationName: {
           type: String,
           required: true
      },
+     streetAddress: String,
      neighborhood: String,
-     geolocation: [Number],
+     longitude: Number,
+     latitude: Number,
+     directions: String,
+     hours: String,
      active: Boolean,
      accessible: Boolean,
      genderNeutral: Boolean,
