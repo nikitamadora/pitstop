@@ -13,7 +13,13 @@ const db = require('./models');
 //     Setup Routes
 //-----------------------
 // TODO Reactivate after routes/index.js file is completed
-// const routes = require('./routes');
+const routes = require('./routes');
+
+// app.get('/', (req, res) => {
+//      res.sendFile('/views/index.html', {
+//           root: __dirname + '/./'
+//      });
+// });
 
 //-----------------------
 //       Middleware
@@ -25,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     Views Routes
 //-----------------------
 // TODO Reactivate when we have stubbed out our routes/index.js AND our routes/views.js
-// app.use('/', routes.views);
+app.use('/', routes.views);
 
 //-----------------------
 //      API Routes

@@ -8,12 +8,22 @@ const ctrl = require('../controllers');
 //     Cities Routes
 // -----------------------
 
-/*
-* Aurelie, go ahead and try this since we're not pair programming. We're adding the routes to the controller files; reference the api.js file in the express-cities solution Allen gave us, plus the photo of the whiteboarding we did with Kenny. :) Do the same over on views.js and index.js, and if either of us get stuck, we can ask each other.. or whoever :)
-*/ 
-
+// router.get('/cities', ctrl.cities.index);
+// router.get('/cities/:id', ctrl.cities.show);
+// router.post('/cities', ctrl.cities.create);
 
 // -----------------------
 //    Restrooms Routes
 // -----------------------
+
+// router.get('/restrooms', ctrl.restrooms.index);
+// router.get('/restrooms/new', ctrl.restrooms.show);
+// router.post('/restrooms', ctrl.restrooms.create);
+// router.put('/restrooms/:id', ctrl.restrooms.update);
+// router.delete('/restrooms/:id', ctrl.restrooms.destroy);
+
+// -----------------------
+//      Export Router
+// -----------------------
+module.exports = router;
 
