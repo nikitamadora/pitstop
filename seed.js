@@ -103,6 +103,7 @@ const restrooms_list = [
      }
 ];
 
+// TODO This currently works for populating our db with temp data, but we need to figure out how we're going to connect the restroom to the city
 db.City.deleteMany({}, (err, cities) => {
      if (err) {
           console.log(err);
