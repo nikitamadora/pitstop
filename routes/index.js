@@ -1,1 +1,2 @@
-// Kita wants to stub this
+// Aurelie, try this on your own :)
+// See api.js for notes
