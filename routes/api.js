@@ -25,13 +25,7 @@ router.get('/cities', (req, res) => {
 // -----------------------
 
 // Index API Route
-router.get('/restrooms', (req, res) => {
-     db.Restroom.find({}, (err, foundRestrooms) => {
-          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again.' });
-
-          res.json(foundRestrooms);
-     });
-});
+router.get('/restrooms', ctrl.restroom.index);
 
 // Individual Restroom API Route
 router.get('/restrooms/:id', (req, res) => {

@@ -28,7 +28,6 @@ app.use('/', routes.views);
 //-----------------------
 //      API Routes
 //-----------------------
-// TODO Reactivate when we have our routes/index.js AND routes/api.js
 app.use('/api/v1', routes.api);
 
 //-----------------------
