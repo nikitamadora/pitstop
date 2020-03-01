@@ -9,12 +9,13 @@ const db = require('../models');
 //     Cities Routes
 // -----------------------
 
+// Index API Route
 router.get('/cities', (req, res) => {
-     db.City.find({}, (err, foundCity) => {
-          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again' });
+     db.City.find({}, (err, foundCities) => {
+          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again.' });
 
-          res.json(foundCity);
-     })
+          res.json(foundCities);
+     });
 });
 // router.get('/cities/:id', ctrl.cities.show);
 // router.post('/cities', ctrl.cities.create);
@@ -23,8 +24,23 @@ router.get('/cities', (req, res) => {
 //    Restrooms Routes
 // -----------------------
 
-// router.get('/restrooms', ctrl.restrooms.index);
-// router.get('/restrooms/new', ctrl.restrooms.show);
+// Index API Route
+router.get('/restrooms', (req, res) => {
+     db.Restroom.find({}, (err, foundRestrooms) => {
+          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again.' });
+
+          res.json(foundRestrooms);
+     });
+});
+
+// Individual Restroom API Route
+router.get('/restrooms/:id', (req, res) => {
+     db.Restroom.findById(req.params.id, (err, foundRestroom) => {
+          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again.'});
+     
+          res.json(foundRestroom);
+     });
+});
 // router.post('/restrooms', ctrl.restrooms.create);
 // router.put('/restrooms/:id', ctrl.restrooms.update);
 // router.delete('/restrooms/:id', ctrl.restrooms.destroy);
