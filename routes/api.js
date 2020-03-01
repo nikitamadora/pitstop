@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ctrl = require('../controllers');
+const db = require('../models');
 
 // Path starts at 'api/v1'
 
@@ -8,7 +9,13 @@ const ctrl = require('../controllers');
 //     Cities Routes
 // -----------------------
 
-// router.get('/cities', ctrl.cities.index);
+router.get('/cities', (req, res) => {
+     db.City.find({}, (err, foundCity) => {
+          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again' });
+
+          res.json(foundCity);
+     })
+});
 // router.get('/cities/:id', ctrl.cities.show);
 // router.post('/cities', ctrl.cities.create);
 
