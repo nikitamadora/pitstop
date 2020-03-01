@@ -9,10 +9,31 @@ router.get('/', (req, res) => {
 });
 
 // Results View
-// router.get('/results/', (req, res) => {
-//      res.sendFile('views/results.html', {
-//           root: __dirname + '/../'
-//      });
-// });
+router.get('/results/', (req, res) => {
+     res.sendFile('/views/results.html', {
+          root: __dirname + '/../'
+     });
+});
+
+// Show View
+router.get('/restrooms/view', (req, res) => {
+     res.sendFile('/views/restrooms/show.html', {
+          root: __dirname + '/../'
+     });
+});
+
+// New Entry View
+router.get('/restrooms/new', (req, res) => {
+     res.sendFile('/views/restrooms/new.html', {
+          root: __dirname + '/../'
+     });
+});
+
+// Edit View
+router.get('/restrooms/edit', (req, res) => {
+     res.sendFile('/views/restrooms/edit.html', {
+          root: __dirname + '/../'
+     });
+});
 
 module.exports = router;
