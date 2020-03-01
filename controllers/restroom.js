@@ -4,7 +4,6 @@
 const db = require('../models');
 
 const index = (req, res) => {
-     // This route will need Mongoose code for how to find every instance of the Restroom model in our database
      db.Restroom.find({}, (err, foundRestrooms) => {
           if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again.' });
 
@@ -13,33 +12,41 @@ const index = (req, res) => {
 };
 
 const show = (req, res) => {
-     // This route will need Mongoose code for how to find one instance of the Restroom model in our database
-     // Test by uncommenting the following:
-     // res.send('Testing restroom show route');
+     db.Restroom.findById(req.params.id, (err, foundRestroom) => {
+          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again.'});
+     
+          res.json(foundRestroom);
+     });
 };
 
 const create = (req, res) => {
-     // This route will need Mongoose code for how to create one instance of the Restroom model in our database
-     // Test by uncommenting the following:
-     // res.send('Testing restroom create route');
+     db.Restroom.create(req.body, (err, newRestroom) => {
+          if (err) return res.json(err);
+
+          res.json(newRestroom);
+     });
 };
 
 const update = (req, res) => {
-     // This route will need Mongoose code for how to update one instance of the Restroom model in our database
-     // Test by uncommenting the following:
-     // res.send('Testing restroom update route');
+     db.Restroom.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedRestroom) => {
+          if (err) return res.status(400).json({ status: 400, error:'Something went wrong, please try again.'});
+
+          res.json(updatedRestroom);
+     });
 };
 
 const destroy = (req, res) => {
-     // This route will need Mongoose code for how to delete one instance of the Restroom model in our database
-     // Test by uncommenting the following:
-     // res.send('Testing restroom destroy route');
+     db.Restroom.findByIdAndDelete(req.params.id, (err, deletedRestroom) => {
+          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again.' });
+
+          res.json(deletedRestroom);
+     });
 };
 
 module.exports = {
      index,
-     // show,
-     // create,
-     // update,
-     // destroy
+     show,
+     create,
+     update,
+     destroy
 };
