@@ -1,29 +1,26 @@
 // We're bringing in our database from the models folder, since we need to manipulate our database
 
-// (Kita) I don't know if this is what we'll keep yet...
-
 const db = require('../models');
 
 const index = (req, res) => {
-     // this route will need Mongoose code for how to find every instance of the City model in our database
-     // we can test this route by uncommenting the code below
-     // res.send('testing cities index route');
+     db.City.find({}, (err, foundCities) => {
+          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again.' });
+
+          res.json(foundCities);
+     });
 };
 
-const show = (req, res) => {
-     // this route will need Mongoose code for how to find one instance of the City model in our database
-     // test by uncommenting this:
-     // res.send('testing cities show route');
-};
+// Still working on these... transitioning to front-end research and whiteboarding this issue
+// const show = (req, res) => {
+//      db.City.findOne({ cityName: req.body.cityName}, (err, foundCity))};
 
-const create = (req, res) => {
-     // this route will need Mongoose code for how to create every instance of the City model in our database
-     // test by uncommenting this:
-     // res.send('testing cities create route');
-};
+// const create = (req, res) => {
+//      db.Restroom.create(req.body, (err, newRestroom) => {});
+
+// };
 
 module.exports = {
-     index,
-     show,
-     create
-}
+     index };
+     // show,
+     // create
+// }

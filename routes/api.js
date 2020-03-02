@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ctrl = require('../controllers');
+const db = require('../models');
 
 // Path starts at 'api/v1'
 
@@ -8,12 +9,23 @@ const ctrl = require('../controllers');
 //     Cities Routes
 // -----------------------
 
-/*
-* Aurelie, go ahead and try this since we're not pair programming. We're adding the routes to the controller files; reference the api.js file in the express-cities solution Allen gave us, plus the photo of the whiteboarding we did with Kenny. :) Do the same over on views.js and index.js, and if either of us get stuck, we can ask each other.. or whoever :)
-*/ 
-
+// Index API Route
+router.get('/cities', ctrl.city.index);
+// router.get('/cities/:id', ctrl.city.show);
+// router.post('/cities', ctrl.city.create);
 
 // -----------------------
 //    Restrooms Routes
 // -----------------------
+
+router.get('/restrooms', ctrl.restroom.index);
+router.get('/restrooms/:id', ctrl.restroom.show);
+router.post('/restrooms', ctrl.restroom.create);
+router.put('/restrooms/:id', ctrl.restroom.update);
+router.delete('/restrooms/:id', ctrl.restroom.destroy);
+
+// -----------------------
+//      Export Router
+// -----------------------
+module.exports = router;
 
