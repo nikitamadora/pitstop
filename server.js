@@ -20,6 +20,9 @@ const routes = require('./routes');
 app.use(bodyParser.json()); // parse JSON body from request
 app.use(bodyParser.urlencoded({ extended: true })); // TODO say why you use this, read the doc
 
+// app.use("/styles", express.static(__dirname + '/public'));
+app.use(express.static('public'));
+
 //-----------------------
 //     Views Routes
 //-----------------------
