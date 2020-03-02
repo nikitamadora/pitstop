@@ -3,24 +3,20 @@
 const db = require('../models');
 
 const index = (req, res) => {
-     db.City.find({}, (err, foundCity) => {
-          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again' });
+     db.City.find({}, (err, foundCities) => {
+          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again.' });
 
-          res.json(foundCity);
-     })
+          res.json(foundCities);
+     });
 };
 
-// (Kita:) I'm not sure if we need these yet...
+// Still working on these... transitioning to front-end research and whiteboarding this issue
 // const show = (req, res) => {
-//      // this route will need Mongoose code for how to find one instance of the City model in our database
-//      // test by uncommenting this:
-//      // res.send('testing cities show route');
-// };
+//      db.City.findOne({ cityName: req.body.cityName}, (err, foundCity))};
 
 // const create = (req, res) => {
-//      // this route will need Mongoose code for how to create every instance of the City model in our database
-//      // test by uncommenting this:
-//      // res.send('testing cities create route');
+//      db.Restroom.create(req.body, (err, newRestroom) => {});
+
 // };
 
 module.exports = {

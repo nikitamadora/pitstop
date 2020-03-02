@@ -10,15 +10,9 @@ const db = require('../models');
 // -----------------------
 
 // Index API Route
-router.get('/cities', (req, res) => {
-     db.City.find({}, (err, foundCities) => {
-          if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again.' });
-
-          res.json(foundCities);
-     });
-});
-// router.get('/cities/:id', ctrl.cities.show);
-// router.post('/cities', ctrl.cities.create);
+router.get('/cities', ctrl.city.index);
+// router.get('/cities/:id', ctrl.city.show);
+// router.post('/cities', ctrl.city.create);
 
 // -----------------------
 //    Restrooms Routes
