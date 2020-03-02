@@ -27,22 +27,6 @@ const cities_list = [
      }
 ];
 
-// locationName: {
-//      type: String,
-//      required: true
-// },
-// streetAddress: String,
-// neighborhood: String,
-// latlong...
-// directions: String,
-// active: Boolean,
-// accessible: Boolean,
-// genderNeutral: Boolean,
-// changingStation: Boolean,
-// reqPurchase: Boolean,
-// sanitaryProducts: Boolean,
-// starRating: Number
-
 const restrooms_list = [
      {
           locationName: 'Beachside Cafe',

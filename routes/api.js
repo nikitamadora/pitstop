@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ctrl = require('../controllers');
+const db = require('../models');
 
 // Path starts at 'api/v1'
 
@@ -8,23 +9,23 @@ const ctrl = require('../controllers');
 //     Cities Routes
 // -----------------------
 
-// ---> We probably don't need the index, update and delete:
-// router.get('/cities', ctrl.cities.index);
-router.get('/cities/:id', ctrl.cities.show);
-router.post('/cities', ctrl.cities.create);
-// router.put('/cities/:id', ctrl.cities.update);
-// router.delete('cities/:id', ctrl.cities.destroy);
-
+// Index API Route
+router.get('/cities', ctrl.city.index);
+// router.get('/cities/:id', ctrl.city.show);
+// router.post('/cities', ctrl.city.create);
 
 // -----------------------
 //    Restrooms Routes
 // -----------------------
 
-router.get('/restrooms', ctrl.restrooms.index);
-router.get('/restrooms/:restroomId', ctrl.restrooms.show);
-router.post('/restrooms', ctrl.restrooms.create);
-router.put('/restrooms/:restroomId', ctrl.restrooms.update);
-router.delete('restrooms/:restroomId', ctrl.restrooms.destroy);
+router.get('/restrooms', ctrl.restroom.index);
+router.get('/restrooms/:id', ctrl.restroom.show);
+router.post('/restrooms', ctrl.restroom.create);
+router.put('/restrooms/:id', ctrl.restroom.update);
+router.delete('/restrooms/:id', ctrl.restroom.destroy);
 
-
+// -----------------------
+//      Export Router
+// -----------------------
 module.exports = router;
+
