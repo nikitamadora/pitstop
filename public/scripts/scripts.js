@@ -54,8 +54,3 @@ function getRestroomTemplate(restroom) {
 };
 
 // <img class="activator" src="https://picsum.photos/1200/200">
-
-
-// ----- Script to create a restroom into new.html
-
-const 
