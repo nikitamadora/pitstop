@@ -1,18 +1,20 @@
 const API_BASE = '/api/v1';
-const cardContainerEl = document.querySelector('col s9');
+const cardContainerEl = document.querySelector('#restroom-cards');
 
 // ----- Script to list restrooms into show.html
-function getRestrooms(e) {
-  event.preventDefault();
+function getRestrooms() {
   fetch(`${API_BASE}/restrooms`)
-  .then (res => res.json())
-  .then (json => render(json))
+  .then(res => res.json())
+  .then(json => render(json))
+  .catch(err => console.log(err))
 };
 getRestrooms();
 
-function render(restroom) {
+function render(restrooms) {
+  restrooms.forEach(restroom => {
+    cardContainerEl.insertAdjacentHTML('beforeend', getRestroomTemplate(restroom))
+  });
   
-  cardContainerEl.insertAdjacentHTML('beforeend', getRestroomTemplate(restroom))
 };
 
 function getRestroomTemplate(restroom) {
@@ -22,12 +24,12 @@ function getRestroomTemplate(restroom) {
           <img class="activator" src="https://picsum.photos/300/400">
       </div>
       <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+          <span class="card-title activator grey-text text-darken-4">${restroom.locationName}<i class="material-icons right">more_vert</i></span>
           <p><a href="#">This is a link</a></p>
       </div>
       <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>${restroom.location}</p>
+          <span class="card-title grey-text text-darken-4">${restroom.locationName}<i class="material-icons right">close</i></span>
+          <p>blablabla</p>
       </div>
     </div>
   `
