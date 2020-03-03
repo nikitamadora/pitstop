@@ -14,7 +14,6 @@ function render(restrooms) {
   restrooms.forEach(restroom => {
     cardContainerEl.insertAdjacentHTML('beforeend', getRestroomTemplate(restroom))
   });
-  
 };
 
 function getRestroomTemplate(restroom) {
