@@ -17,7 +17,7 @@
      <script defer type="text/javascript" src="/scripts/materialize.min.js"></script>
 
      <!-- Custom JS -->
-     <script defer type="text/javascript" src="/scripts/scripts.js"></script>
+     <script defer type="text/javascript" src="/scripts/newRestroom.js"></script>
 
      <title>New Restroom</title>
 </head>
@@ -34,7 +34,7 @@
 
      <!-- FORM -->
      <div class="container">
-          <form class="col s12">
+          <form class="col s12 newRestroom">
                <div class="row">
                     <!-- Location Name -->
                     <div class="input-field col s12">
@@ -51,7 +51,7 @@
                     <!-- Neighborhood -->
                     <div class="input-field col s12">
                          <input type="text" placeholder="Optional, but helpful!" id="neighborhood">
-                         <label for="neighbhorhood">Location Name</label>
+                         <label for="neighborhood">Neighborhood Name</label>
                     </div>
                     
                     <!-- City -->
@@ -74,37 +74,37 @@
                     
                     <!-- Features -->
                     <p>
-                         <label>
+                         <label for="changing_station">
                               <input type="checkbox" />
                               <span>Changing Tables</span>
                          </label>
 
-                         <label>
+                         <label for="gender_neutral">
                               <input type="checkbox" />
                               <span>Gender Neutral</span>
                          </label>
                          
-                         <label>
+                         <label for="accessible">
                               <input type="checkbox" />
                               <span>Accessible</span>
                          </label>
 
-                         <label>
+                         <label for="hours">
                               <input type="checkbox" />
                               <span>24-Hour</span>
                          </label>
 
-                         <label>
+                         <label for="req_purchase">
                               <input type="checkbox" />
                               <span>Requires Purchase</span>
                          </label>
 
-                         <label>
+                         <label for="sanitary_product">
                               <input type="checkbox" />
                               <span>Sanitary Products Available</span>
                          </label>
                     </p>
-
+                    <button type="submit" id="submitNew">SUBMIT</button>
              
                </div>
           </form>
