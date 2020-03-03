@@ -3,9 +3,123 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Edit Restroom</title>
+
+     <!-- Materialize CSS -->
+     <link type="text/css" rel="stylesheet" href="/styles/materialize.css"  media="screen,projection"/>
+
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="/styles/styles.css">
+
+     <!-- Google Icons -->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <!-- Materialize JS -->
+     <script defer type="text/javascript" src="/scripts/materialize.min.js"></script>
+
+     <!-- Custom JS -->
+     <script defer type="text/javascript" src="/scripts/scripts.js"></script>
+
+     <title>New Restroom</title>
 </head>
+
 <body>
-     <h1>Edit Restroom</h1>
+
+     <nav>
+          <div class="nav-wrapper">
+               <a href="/" class="brand-logo">PitStop</a>
+               <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li><a href="/restrooms/new">Add New</a></li>
+               </ul>
+          </div>
+     </nav>
+
+     <!-- FORM -->
+     <div class="container">
+          <form class="col s12">
+               <div class="row">
+                    <!-- Location Name -->
+                    <div class="input-field col s12">
+                         <input type="text" value="16th & Valencia" placeholder="" id="location_name" class="validate">
+                         <label for="location_name">Location Name</label>
+                    </div>
+
+                    <!-- Street Address -->
+                    <div class="input-field col s12">
+                         <input type="text" value="1237 Galaxia Drive" id="street_name" class="validate">
+                         <label for="street_name">Street Name</label>
+                    </div>
+                    
+                    <!-- Neighborhood -->
+                    <div class="input-field col s12">
+                         <input type="text" placeholder="Optional, but helpful!" value="The Mission" id="neighborhood">
+                         <label for="neighbhorhood">Neighborhood</label>
+                    </div>
+                    
+                    <!-- City -->
+                    <div class="input-field col s12">
+                         <input type="text" placeholder="San Francisco" id="city_name">
+                         <label for="city_name">City</label>
+                    </div>
+                    
+                    <!-- State -->
+                    <div class="input-field col s12">
+                         <input type="text" placeholder="California" id="state">
+                         <label for="state">State</label>
+                    </div>
+                    
+                    <!-- Country -->
+                    <div class="input-field col s12">
+                         <input type="text" placeholder="USA" id="country">
+                         <label for="country">Country</label>
+                    </div>
+                    
+                    <!-- Features -->
+                    <p>
+                         <label>
+                              <input type="checkbox" />
+                              <span>Changing Tables</span>
+                         </label>
+
+                         <label>
+                              <input type="checkbox" />
+                              <span>Gender Neutral</span>
+                         </label>
+                         
+                         <label>
+                              <input type="checkbox" />
+                              <span>Accessible</span>
+                         </label>
+
+                         <label>
+                              <input type="checkbox" />
+                              <span>24-Hour</span>
+                         </label>
+
+                         <label>
+                              <input type="checkbox" />
+                              <span>Requires Purchase</span>
+                         </label>
+
+                         <label>
+                              <input type="checkbox" />
+                              <span>Sanitary Products Available</span>
+                         </label>
+                    </p>
+                    <!-- Submit -->
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                         <i class="material-icons right">send</i>
+                    </button>
+             
+               </div>
+          </form>
+     </div>
+
+     <footer class="page-footer">
+          <div class="footer-copyright">
+            <div class="container">
+            <p>© 2020 Copyright</p>
+            </div>
+          </div>
+        </footer>
 </body>
 </html>

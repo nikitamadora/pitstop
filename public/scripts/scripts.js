@@ -20,7 +20,7 @@ function getRestroomTemplate(restroom) {
   return `
       <div class="card">
       <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="https://picsum.photos/300/400">
+          <img class="activator" src="https://picsum.photos/1200/200">
       </div>
       <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">${restroom.locationName}<i class="material-icons right">more_vert</i></span>
