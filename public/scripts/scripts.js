@@ -8,12 +8,21 @@ function getRestrooms() {
   .then(json => render(json))
   .catch(err => console.log(err))
 };
+// Commented out getRestrooms(); because we don't want to
+// invoke it in every instance of scripts.js loading
+
+// Instead, we want to populate the page with restrooms 
+// depending on the cityName given during the query.
+
 getRestrooms();
+
 function render(restrooms) {
   restrooms.forEach(restroom => {
     cardContainerEl.insertAdjacentHTML('beforeend', getRestroomTemplate(restroom))
   });
 };
+
+// Creates a restroom template
 function getRestroomTemplate(restroom) {
   return `
     <div class="card">
@@ -43,11 +52,21 @@ function getRestroomTemplate(restroom) {
                     <p>Require Purchase: ${restroom.reqPurchase}</p>
                     <p>Sanitary Products Available: ${restroom.sanitaryProducts}</p>
                     <p>Star Rating: ${restroom.starRating}/5</p>
+                    <button type="button" class="edit-button">Edit This Restroom</button>
                 </div>
           </div>    
       </div>    
     </div>
   `
 };
+
+// Event Handlers --------------
+// Adds event listener to entire document, then if the target is an edit button, the edit page will load
+
+const editBtnClickHandler = document.addEventListener('click', function(e){
+  if (e.target.className === "edit-button") {
+    console.log(e.target.className);
+  }
+});
 
 // <img class="activator" src="https://picsum.photos/1200/200">
