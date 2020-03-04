@@ -14,6 +14,12 @@ formEl.addEventListener('submit', (event) => {
     //starRating: star_rating.value
   };
 
+  // When this form submits, we are fetching data
+  // The data is fetched when we post {something} to an endpoint
+  // We are posting to the api/v1/restrooms/new endpoint
+  // a JSON.stringified(this just means it's a formal string)
+  // of the newRestroom obj. we made above.
+  // fetch is a promise object, so we can invoke .then()s
   fetch(`/api/v1/restrooms/new`, {
     method: 'POST',
     headers: {
@@ -21,6 +27,9 @@ formEl.addEventListener('submit', (event) => {
     },
     body: JSON.stringify(newRestroom)
   })
+  // Whatever the fetch returns, THEN do something with it.
+  // In this case, then, with that stream, return the jsonified version
+  // of that stream.
   .then((stream) => stream.json())
   .then((res) => {
     console.log(res);

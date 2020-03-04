@@ -30,7 +30,7 @@ router.get('/restrooms/new', (req, res) => {
 });
 
 // Edit View
-router.get('/restrooms/edit', (req, res) => {
+router.get('/restrooms/edit/:id', (req, res) => {
      res.sendFile('/views/restrooms/edit.html', {
           root: __dirname + '/../'
      });

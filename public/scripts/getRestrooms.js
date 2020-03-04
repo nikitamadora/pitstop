@@ -1,7 +1,6 @@
 // ----- Variables ----- //
 const API_BASE = '/api/v1';
 const cardContainerEl = document.querySelector('#restroom-cards');
-
 // ----- Script to list the restrooms into show.html
 function getRestrooms() {
   fetch(`${API_BASE}/restrooms`)
@@ -9,6 +8,12 @@ function getRestrooms() {
   .then(json => render(json))
   .catch(err => console.log(err))
 };
+// Commented out getRestrooms(); because we don't want to
+// invoke it in every instance of scripts.js loading
+
+// Instead, we want to populate the page with restrooms 
+// depending on the cityName given during the query.
+
 getRestrooms();
 
 function render(restrooms) {
@@ -17,6 +22,7 @@ function render(restrooms) {
   });
 };
 
+// Creates a restroom template
 function getRestroomTemplate(restroom) {
   return `
     <div class="card">
@@ -36,7 +42,8 @@ function getRestroomTemplate(restroom) {
                   PLACEHOLDER FOR MAPS
                 </div>
 
-                <div class="col s6">
+                <div class="col s6 restroom-info">
+                    <input type="hidden" value=${restroom._id}>
                     <span class="card-title grey-text text-darken-4">${restroom.locationName}<i class="material-icons right">close</i></span>
                     <p>${restroom.streetAddress}, ${restroom.neighborhood}</p>
                     <p>Directions: ${restroom.directions}</p>
@@ -46,11 +53,26 @@ function getRestroomTemplate(restroom) {
                     <p>Require Purchase: ${restroom.reqPurchase}</p>
                     <p>Sanitary Products Available: ${restroom.sanitaryProducts}</p>
                     <p>Star Rating: ${restroom.starRating}/5</p>
+                    <button type="button" class="edit-button">Edit This Restroom</button>
                 </div>
           </div>    
       </div>    
     </div>
   `
 };
+
+// Event Handlers --------------
+// Adds event listener to entire document, then if the target is an edit button, the edit page will load
+
+const editBtnClickHandler = document.addEventListener('click', function(e){
+  if (e.target.className === "edit-button") {
+    // e.target is the edit button
+    // thus, e.target.parentNode is the edit button's
+    // parent div
+    const restroomInfo = e.target.parentNode;
+    restroomId = restroomInfo.querySelector("[type=hidden]").value;
+    window.location=`/restrooms/edit/${restroomId}`;
+  }
+});
 
 // <img class="activator" src="https://picsum.photos/1200/200">
