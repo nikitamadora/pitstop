@@ -42,7 +42,8 @@ function getRestroomTemplate(restroom) {
                   PLACEHOLDER FOR MAPS
                 </div>
 
-                <div class="col s6">
+                <div class="col s6 restroom-info">
+                    <input type="hidden" value=${restroom._id}>
                     <span class="card-title grey-text text-darken-4">${restroom.locationName}<i class="material-icons right">close</i></span>
                     <p>${restroom.streetAddress}, ${restroom.neighborhood}</p>
                     <p>Directions: ${restroom.directions}</p>
@@ -65,7 +66,13 @@ function getRestroomTemplate(restroom) {
 
 const editBtnClickHandler = document.addEventListener('click', function(e){
   if (e.target.className === "edit-button") {
-    console.log(e.target.className);
+    // e.target is the edit button
+    // thus, e.target.parentNode is the edit button's
+    // parent div
+    const restroomInfo = e.target.parentNode;
+    console.log(restroomInfo);
+    console.log(restroomInfo.querySelector("[type=hidden]").value);
+    // window.location=`/restrooms/edit/${}`;
   }
 });
 
