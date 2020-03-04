@@ -16,7 +16,21 @@ neighborhoodName.value = "pikachu";
 console.log(neighborhoodName.value);
 
 // 4. Get data from DB
-fetch(`/api/v1/restrooms/:id`)
+// Split the id off of the URL path
+const restroomId = window.location.pathname.split('/')[3];
+
+fetch(`/api/v1/restrooms/${restroomId}`)
+  .then((stream) => stream.json())
+  .then((data) => {
+    // Set locationName.value to data.location
+    locationName.value = data.locationName;
+    console.log(locationName.value);
+  })
+  .catch((err) => console.log(err));
+
+// 5. Use the returned object to populate the form
+// Change the locationName's value to the locationName in the returned object
+
 
 
   // CALLBACK: newRestroom is an object that we're going to submit to the db
