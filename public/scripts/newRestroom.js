@@ -6,6 +6,7 @@ formEl.addEventListener('submit', (event) => {
     locationName: location_name.value,
     streetAddress: street_name.value,
     neighborhood: neighborhood.value,
+    city: city_name.value,
     //hours: hours.value,
     //accessible: accessible.value,
     //genderNeutral: gender_neutral.value,

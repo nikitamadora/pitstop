@@ -1,19 +1,16 @@
-// Select form data from form on new.html, which has a class of newRestroom
+// import { STATES } from "mongoose";
+
 // const editForm = document.querySelector('.editRestroom');
 
-// 1. Select location name input
 const locationName = document.querySelector("#location_name");
-console.log(locationName);
-
-// 2. Select street name input
 const streetName = document.querySelector("#street_name");
-console.log(streetName);
-
-// 3. Select remaining inputs...
 const neighborhoodName = document.querySelector("#neighborhood");
-console.log(neighborhoodName.value);
-neighborhoodName.value = "pikachu";
-console.log(neighborhoodName.value);
+const cityName = document.querySelector("#city_name");
+const stateName = document.querySelector("#state");
+const countryName = document.querySelector("#country");
+const changingStation = document.querySelector("#changing_station");
+const genderNeutral = document.querySelector("#gender_neutral");
+const accessible = document.querySelector("#accessible");
 
 // 4. Get data from DB
 // Split the id off of the URL path
@@ -22,9 +19,12 @@ const restroomId = window.location.pathname.split('/')[3];
 fetch(`/api/v1/restrooms/${restroomId}`)
   .then((stream) => stream.json())
   .then((data) => {
-    // Set locationName.value to data.location
     locationName.value = data.locationName;
-    console.log(locationName.value);
+    streetName.value = data.streetAddress;
+    console.log(data);
+    console.log(data.neighborhoodName)
+    neighborhoodName.value = data.neighborhood;
+    cityName.value = data.cityName;
   })
   .catch((err) => console.log(err));
 
