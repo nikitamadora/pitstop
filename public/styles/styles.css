@@ -6,4 +6,18 @@ body {
 
 main {
   flex: 1 0 auto;
+  background-image: url(/images/san-francisco-2361226_1920.jpg);
+  width: 100%;
+} 
+
+#search_bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#search_input {
+  margin: auto 10px;
+}
+#search_button {
+  margin: auto 10px;
 }
