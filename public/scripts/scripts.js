@@ -17,17 +17,22 @@ function render(restrooms) {
 function getRestroomTemplate(restroom) {
   return `
     <div class="card">
-      <div class="card waves-effect waves-block waves-light">
+
+      <div class="card waves-effect waves-block waves-light"> 
       </div>
+          
       <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">${restroom.locationName}<i class="material-icons right">more_vert</i></span>
           <p>${restroom.streetAddress}, ${restroom.neighborhood}</p>
       </div>
+
       <div class="card-reveal">
           <div class="row">
-                <div class="col s6">
+
+                <div class="col s6"> 
                   PLACEHOLDER FOR MAPS
                 </div>
+
                 <div class="col s6">
                     <span class="card-title grey-text text-darken-4">${restroom.locationName}<i class="material-icons right">close</i></span>
                     <p>${restroom.streetAddress}, ${restroom.neighborhood}</p>
@@ -39,9 +44,10 @@ function getRestroomTemplate(restroom) {
                     <p>Sanitary Products Available: ${restroom.sanitaryProducts}</p>
                     <p>Star Rating: ${restroom.starRating}/5</p>
                 </div>
-          </div>
-      </div>
+          </div>    
+      </div>    
     </div>
   `
 };
+
 // <img class="activator" src="https://picsum.photos/1200/200">
