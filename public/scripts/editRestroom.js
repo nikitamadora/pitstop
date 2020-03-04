@@ -15,6 +15,9 @@ console.log(neighborhoodName.value);
 neighborhoodName.value = "pikachu";
 console.log(neighborhoodName.value);
 
+// 4. Get data from DB
+fetch(`/api/v1/restrooms/:id`)
+
 
   // CALLBACK: newRestroom is an object that we're going to submit to the db
 

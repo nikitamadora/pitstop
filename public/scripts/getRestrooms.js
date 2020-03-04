@@ -70,9 +70,8 @@ const editBtnClickHandler = document.addEventListener('click', function(e){
     // thus, e.target.parentNode is the edit button's
     // parent div
     const restroomInfo = e.target.parentNode;
-    console.log(restroomInfo);
-    console.log(restroomInfo.querySelector("[type=hidden]").value);
-    // window.location=`/restrooms/edit/${}`;
+    restroomId = restroomInfo.querySelector("[type=hidden]").value;
+    window.location=`/restrooms/edit/${restroomId}`;
   }
 });
 
