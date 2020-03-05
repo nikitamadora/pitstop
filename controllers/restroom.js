@@ -68,8 +68,12 @@ const create = (req, res) => {
 
 const update = (req, res) => {
      db.Restroom.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedRestroom) => {
-          if (err) return res.status(400).json({ status: 400, error:'Something went wrong, please try again.'});
-
+          if (err) {
+            return res.status(400).json({ status: 400, error:'Something went wrong, please try again.'});
+          }
+          updatedRestroom.save((err, savedRestroom) => {
+            if (err) return res.json(err);
+          });
           res.json(updatedRestroom);
      });
 };
