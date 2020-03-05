@@ -5,13 +5,16 @@ formEl.addEventListener('submit', (event) => {
   const newRestroom = {
     locationName: location_name.value,
     streetAddress: street_name.value,
-    neighborhood: neighborhood.value,
-    //hours: hours.value,
-    //accessible: accessible.value,
-    //genderNeutral: gender_neutral.value,
-    //reqPurchase: req_purchase.value,
-    //sanitaryProducts: sanitary_products.value,
-    //starRating: star_rating.value
+    cityState: city_name.value,
+    country: country.value,
+    directions: directions.value,
+    hours: hours.value,
+    accessible: accessible.value,
+    genderNeutral: gender_neutral.value,
+    changingStation: changing_station.value,
+    reqPurchase: req_purchase.value,
+    sanitaryProducts: sanitary_products.value,
+    // starRating: star_rating.value
   };
 
   // When this form submits, we are fetching data
@@ -35,7 +38,11 @@ formEl.addEventListener('submit', (event) => {
     console.log(res);
   })
   .catch((err) => console.log(err));
-
+  
+  // Notify user that they successfully added it
+  alert('Thank you for your submission! You may return to the home page');
+  // Redirect user to home page
+  // window.location = "/";
 });
 
 

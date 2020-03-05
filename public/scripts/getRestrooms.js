@@ -50,7 +50,7 @@ function getRestroomTemplate(restroom) {
                     <p>Hours of operation: ${restroom.hours}</p>
                     <p>Gender Neutral: ${restroom.genderNeutral}</p>
                     <p>Changing Station: ${restroom.changingStation}</p>
-                    <p>Require Purchase: ${restroom.reqPurchase}</p>
+                    <p>Requires Purchase: ${restroom.reqPurchase}</p>
                     <p>Sanitary Products Available: ${restroom.sanitaryProducts}</p>
                     <p>Star Rating: ${restroom.starRating}/5</p>
                     <button type="button" class="edit-button">Edit This Restroom</button>
