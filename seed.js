@@ -102,7 +102,7 @@ db.City.deleteMany({}, (err, cities) => {
           console.log('Recreated all cities');
           console.log(`Created ${cities.length} cities`);
      });
-
+// find a way to push new restrooms into city array
      db.Restroom.deleteMany({}, (err, restrooms) => {
           if (err) {
                console.log(err);
