@@ -1,5 +1,3 @@
-// We're bringing in our database from the models folder, since we need to manipulate our database
-
 const db = require('../models');
 
 const index = (req, res) => {

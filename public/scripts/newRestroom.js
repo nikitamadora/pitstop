@@ -5,14 +5,15 @@ formEl.addEventListener('submit', (event) => {
   const newRestroom = {
     locationName: location_name.value,
     streetAddress: street_name.value,
-    neighborhood: neighborhood.value,
-    city: city_name.value,
-    //hours: hours.value,
-    //accessible: accessible.value,
-    //genderNeutral: gender_neutral.value,
-    //reqPurchase: req_purchase.value,
-    //sanitaryProducts: sanitary_products.value,
-    //starRating: star_rating.value
+    cityState: city_name.value,
+    directions: directions.value,
+    hours: hours.value,
+    accessible: accessible.value,
+    genderNeutral: gender_neutral.value,
+    changingStation: changing_station.value,
+    reqPurchase: req_purchase.value,
+    sanitaryProducts: sanitary_products.value,
+    // starRating: star_rating.value
   };
 
   // When this form submits, we are fetching data

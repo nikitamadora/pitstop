@@ -22,7 +22,6 @@ fetch(`/api/v1/restrooms/${restroomId}`)
     locationName.value = data.locationName;
     streetName.value = data.streetAddress;
     console.log(data);
-    console.log(data.neighborhoodName)
     neighborhoodName.value = data.neighborhood;
     cityName.value = data.cityName;
   })
