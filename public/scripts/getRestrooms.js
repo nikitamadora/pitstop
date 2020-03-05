@@ -24,6 +24,8 @@ function render(restrooms) {
 
 // Creates a restroom template
 function getRestroomTemplate(restroom) {
+    // create a function that checks the value of the checkbox, if box is checked stores yes, if unchecked stores no.
+    // 
   return `
     <div class="card">
 

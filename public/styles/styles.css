@@ -6,6 +6,14 @@
   margin: 0 10px;
   background-color:rgba(238,110,115) !important;
 }
+body {
+  display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
 
 /* -------- INDEX PAGE -------- */
 #index-page {
@@ -64,7 +72,7 @@
   color: #524D46;
 }
 
-/* -------- NEW PAGE -------- */
+/* -------- NEW & EDIT PAGE -------- */
 #new-main,
 #edit-main {
   padding-left: 20px;

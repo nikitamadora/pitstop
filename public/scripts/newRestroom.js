@@ -2,6 +2,7 @@ const formEl = document.querySelector('.newRestroom');
 
 formEl.addEventListener('submit', (event) => {
   event.preventDefault();
+  
   const newRestroom = {
     locationName: location_name.value,
     streetAddress: street_name.value,
