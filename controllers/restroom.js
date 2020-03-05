@@ -9,6 +9,7 @@ const index = (req, res) => {
 };
 
 const show = (req, res) => {
+
      db.Restroom.findById(req.params.id, (err, foundRestroom) => {
           if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again.'});
      
