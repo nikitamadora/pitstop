@@ -51,6 +51,7 @@ formEl.addEventListener('submit', (e) => {
     // starRating: star_rating.value
   };
 
+  // Updates the restroom in the restroom db, but not in the city
   fetch(`/api/v1/restrooms/${restroomId}`, {
     method: 'PUT',
     headers: {
@@ -63,7 +64,9 @@ formEl.addEventListener('submit', (e) => {
     console.log(data);
   })
   .catch((err) => console.log(err));
-  console.log('Restroom updated!');
+  
+  alert('Thank you for your update!');
+  window.location = '/';
 });
 // /submit
 
@@ -84,6 +87,8 @@ deleteForeverButton.addEventListener('click', (e) => {
   .catch((err) => console.log(err));
 
   console.log('Entry was deleted!');
-  alert('Hope you meant it! It\'s gone for-heckin-ever!');
+  alert('Hope you meant it! It\'s gone FOREVER!');
   window.location = '/';
 });
+
+// /delete
