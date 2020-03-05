@@ -40,9 +40,9 @@ formEl.addEventListener('submit', (event) => {
   .catch((err) => console.log(err));
   
   // Notify user that they successfully added it
-  alert('Thank you for your submission! You may return to the home page');
+  alert('Thank you for your submission!');
   // Redirect user to home page
-  // window.location = "/";
+  window.location = "/";
 });
 
 
