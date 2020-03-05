@@ -2,11 +2,10 @@ const mongoose = require('mongoose');
 const Restroom = require('./Restroom');
 
 const CitySchema = new mongoose.Schema({
-     cityName: {
+     cityState: {
           type: String,
           required: true
      },
-     state: String,
      country: {
           type: String,
           required: true
