@@ -11,8 +11,9 @@ const RestroomSchema = new mongoose.Schema({
   },
   cityState: {
     type: String,
-    // required: true
+    required: true
   },
+  country: String,
   longitude: Number,
   latitude: Number,
   directions: String,

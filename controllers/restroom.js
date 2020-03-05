@@ -1,6 +1,3 @@
-// RESTROOM CONTROLLER
-// Bringing in the database from the models folder since we'll need to manipulate our database
-
 const db = require('../models');
 
 const index = (req, res) => {
@@ -24,11 +21,8 @@ const create = (req, res) => {
     if (err) {
       return res.json(err);
     }
-    console.log(req.body);
 
-    // Look through the Cities in the db
-    // Try to findOne with a cityState that matches the query
-
+    // Look for existing city in the db
     db.City.findOne({ cityState: req.body.cityState }, (err, foundCity) => {
       
       if (err) {
@@ -67,8 +61,8 @@ const create = (req, res) => {
           console.log("Pushed new restroom into existing city");
         });  
       }
-});
-});
+    });
+  });
 };
 
 

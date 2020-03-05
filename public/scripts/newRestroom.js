@@ -6,6 +6,7 @@ formEl.addEventListener('submit', (event) => {
     locationName: location_name.value,
     streetAddress: street_name.value,
     cityState: city_name.value,
+    country: country.value,
     directions: directions.value,
     hours: hours.value,
     accessible: accessible.value,
@@ -37,7 +38,11 @@ formEl.addEventListener('submit', (event) => {
     console.log(res);
   })
   .catch((err) => console.log(err));
-
+  
+  // Notify user that they successfully added it
+  alert('Thank you for your submission! You may return to the home page');
+  // Redirect user to home page
+  // window.location = "/";
 });
 
 
