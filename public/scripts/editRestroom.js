@@ -4,26 +4,34 @@
 
 const locationName = document.querySelector("#location_name");
 const streetName = document.querySelector("#street_name");
-const neighborhoodName = document.querySelector("#neighborhood");
 const cityName = document.querySelector("#city_name");
-const stateName = document.querySelector("#state");
 const countryName = document.querySelector("#country");
 const changingStation = document.querySelector("#changing_station");
 const genderNeutral = document.querySelector("#gender_neutral");
 const accessible = document.querySelector("#accessible");
+const reqPurchase = document.querySelector("#req_purchase");
+const hours = document.querySelector("#hours");
+const sanitaryProducts = document.querySelector("#sanitary_products");
 
 // 4. Get data from DB
 // Split the id off of the URL path
 const restroomId = window.location.pathname.split('/')[3];
 
+// Prefill the form with restroom's data
 fetch(`/api/v1/restrooms/${restroomId}`)
   .then((stream) => stream.json())
   .then((data) => {
+    console.log(data);
     locationName.value = data.locationName;
     streetName.value = data.streetAddress;
-    console.log(data);
-    neighborhoodName.value = data.neighborhood;
-    cityName.value = data.cityName;
+    cityName.value = data.cityState;
+    countryName.value = data.country;
+    changingStation.value = data.changingStation;
+    genderNeutral.value = data.genderNeutral;
+    accessible.value = data.accessible;
+    reqPurchase.value = data.reqPurchase;
+    hours.value = data.hours;
+    sanitaryProducts.value = data.sanitaryProducts;
   })
   .catch((err) => console.log(err));
 
@@ -37,7 +45,6 @@ fetch(`/api/v1/restrooms/${restroomId}`)
   const editRestroom = {
     locationName: location_name.value,
     streetAddress: street_name.value,
-    neighborhood: neighborhood.value,
     //hours: hours.value,
     //accessible: accessible.value,
     //genderNeutral: gender_neutral.value,
