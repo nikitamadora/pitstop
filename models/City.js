@@ -6,10 +6,7 @@ const CitySchema = new mongoose.Schema({
           type: String,
           required: true
      },
-     country: {
-          type: String,
-          required: true
-     },
+     country: String,
      restrooms: [Restroom.schema]
 });
 
