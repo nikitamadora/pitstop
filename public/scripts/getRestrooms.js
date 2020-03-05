@@ -34,7 +34,7 @@ function getRestroomTemplate(restroom) {
           
       <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">${restroom.locationName}<i class="material-icons right">more_vert</i></span>
-          <p>${restroom.streetAddress}, ${restroom.neighborhood}</p>
+          <p>${restroom.streetAddress}</p>
       </div>
 
       <div class="card-reveal">
@@ -47,15 +47,15 @@ function getRestroomTemplate(restroom) {
                 <div class="col s6 restroom-info">
                     <input type="hidden" value=${restroom._id}>
                     <span class="card-title grey-text text-darken-4">${restroom.locationName}<i class="material-icons right">close</i></span>
-                    <p>${restroom.streetAddress}, ${restroom.neighborhood}</p>
+                    <p>${restroom.streetAddress}</p>
                     <p>Directions: ${restroom.directions}</p>
                     <p>Hours of operation: ${restroom.hours}</p>
                     <p>Gender Neutral: ${restroom.genderNeutral}</p>
                     <p>Changing Station: ${restroom.changingStation}</p>
                     <p>Requires Purchase: ${restroom.reqPurchase}</p>
                     <p>Sanitary Products Available: ${restroom.sanitaryProducts}</p>
-                    <p>Star Rating: ${restroom.starRating}/5</p>
-                    <button type="button" class="edit-button">Edit This Restroom</button>
+
+                    <button type="button" class="edit-submit-button btn waves-effect waves-light edit-button">Edit This Restroom</button>
                 </div>
           </div>    
       </div>    
@@ -67,7 +67,7 @@ function getRestroomTemplate(restroom) {
 // Adds event listener to entire document, then if the target is an edit button, the edit page will load
 
 const editBtnClickHandler = document.addEventListener('click', function(e){
-  if (e.target.className === "edit-button") {
+  if (e.target.className === "edit-submit-button btn waves-effect waves-light edit-button") {
     // e.target is the edit button
     // thus, e.target.parentNode is the edit button's
     // parent div
