@@ -30,8 +30,6 @@ const create = (req, res) => {
     // Try to findOne with a cityState that matches the query
 
     db.City.findOne({ cityState: req.body.cityState }, (err, foundCity) => {
-      console.log(foundCity);
-      console.log(req.body.cityState);
       
       if (err) {
         return res.json(err);
@@ -54,16 +52,21 @@ const create = (req, res) => {
             return res.json(newRestroom);
           });
         }); 
-    }
+      }
 
     // If City IS Found
-    foundCity.restrooms.push(newRestroom);
-      city.save((err, savedCity) => {
-        if (err) {
-          return res.json(err);
-        } res.json(newRestroom);
-        console.log("Pushed new restroom into existing city");
-      });  
+      if (foundCity !== null) {
+        console.log("City was found");
+        foundCity.restrooms.push(newRestroom);
+        foundCity.save((err, savedCity) => {
+          if (err) {
+            return res.json(err);
+          } 
+          res.json(newRestroom);
+          
+          console.log("Pushed new restroom into existing city");
+        });  
+      }
 });
 });
 };
