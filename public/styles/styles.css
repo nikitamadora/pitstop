@@ -1,6 +1,6 @@
 /* -------- GENERAL -------- */
 .brand-logo {
-  margin: 0 10px;
+  margin: 0 20px;
 }
 .footer-copyright {
   margin: 0 10px;
@@ -38,17 +38,21 @@
 }
 #search_container {
   display: flex ;
-  align-items: center;
+  align-items: center; 
 }
 #search_bar {
   margin: 10px;
   color: #524D46;
 }
-#search_icon {
-  margin: auto 10px;
+#index-search-button {
+  display:flex;
+  justify-content: flex-end;
+}
+#search-container {
+  display: flex;
 }
 .pitstop-logo {
-  font-size: 60px;
+  font-size: 80px;
   text-align: center;
   margin-bottom: 10px;
   color: #524D46;
@@ -61,12 +65,15 @@
 }
 
 /* -------- NEW PAGE -------- */
-#new-main {
+#new-main,
+#edit-main {
   padding-left: 20px;
 }
-#new-features {
+#new-features,
+#edit-features {
   padding-left: 20px;
 }
-#new-submit-button {
+#new-submit-button,
+#edit-submit-button {
   margin-left: 20px;
 }
