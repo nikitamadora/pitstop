@@ -172,8 +172,14 @@ const cities_list = [
         "sanitaryProducts": false,
         "starRating": null,
         "__v": 0
-        },
-        {
+        }
+    ]
+  },
+  {
+    cityState: 'Walnut Creek, CA',
+    country: 'USA',
+    restrooms: [
+      {
         "_id": "5e626be7658a44373a8e7976",
         "locationName": "Broadway Plaza",
         "streetAddress": "1 Broadway Plaza",
@@ -206,11 +212,6 @@ const cities_list = [
         "__v": 0
         }
     ]
-  },
-  {
-    cityState: 'Walnut Creek, CA',
-    country: 'USA',
-    restrooms: []
   },
   {
     cityState: 'Boston, MA',
