@@ -4,7 +4,7 @@
 }
 .footer-copyright {
   margin: 0 10px;
-  background-color:rgba(238,110,115) !important;
+  /* background-color:rgba(238,110,115) !important; */
 }
 body {
   display: flex;
