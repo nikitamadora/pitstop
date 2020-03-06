@@ -47,12 +47,11 @@ formEl.addEventListener('submit', (e) => {
     genderNeutral: genderNeutral.value,
     changingStation: changingStation.value,
     reqPurchase: reqPurchase.value,
-    sanitaryProducts: sanitaryProducts.value,
-    // starRating: star_rating.value
+    sanitaryProducts: sanitaryProducts.value
   };
 
   // Updates the restroom in the restroom db, but not in the city
-  fetch(`/api/v1/restrooms/${restroomId}`, {
+  fetch(`/api/v1/cities/${restroomId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

@@ -13,21 +13,27 @@ const update = (req, res) => {
         if (err) {
           return res.status(400).json({ status: 400, error:'Something went wrong, please try again.'});
         }
-        
-        // res.json(foundCity);
+        console.log("City was found!");
 
-        // Take the foundCity and find the restroom within
-        // id() is an iterator
-        let foundRestroom = foundCity.restrooms.id(req.params.id)
-        foundRestroom = req.body;
+        // Return the entire restroom object from within the city restrooms []
+        let targetRestroom = foundCity.restrooms.id(req.params.id);
+        console.log(targetRestroom);
+
+        for (let i = 0; i < foundCity.restrooms.length; i++) {
+          // foundCity contains the restroom I'm trying to update
+          const currentRestroom = foundCity.restrooms[i];
+          // targetRestroom is the restroom I'm trying to update
+          if (currentRestroom.id === targetRestroom.id) {
+            foundCity.restrooms[i] = req.body; 
+            console.log(foundCity);
+          }
+        };
+
         foundCity.save((err, savedCity) => {
           if (err) return res.json(err);
 
-          res.json(foundRestroom);
+          res.json(savedCity); 
         });
-        
-        
-        // const restroomToUpdate = foundCity.restrooms.id(req.params.id);
   });
 };
 
