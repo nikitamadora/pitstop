@@ -150,7 +150,7 @@ const restrooms_list = [
   },
   {
     locationName: 'Target Bush Street',
-    streetAddress: '',
+    streetAddress: '255 Bush Street',
     cityState: 'San Francisco, CA',
     country: 'USA',
     longitude: -122.4030818,
@@ -210,35 +210,34 @@ const restrooms_list = [
   }
 ];
 
-// TODO This currently works for populating our db with temp data, but we need to figure out how we're going to connect the restroom to the city
 db.City.deleteMany({}, (err, cities) => {
-     if (err) {
-          console.log(err);
-          return;
-     }
-     console.log('Removed all cities');
-     db.City.create(cities_list, (err, cities) => {
-          if (err) {
-               console.log(err);
-               return;
-          }
-          console.log('Recreated all cities');
-          console.log(`Created ${cities.length} cities`);
-     });
-// find a way to push new restrooms into city array
-     db.Restroom.deleteMany({}, (err, restrooms) => {
-          if (err) {
-               console.log(err);
-               return;
-          }
-          console.log('Removed all restrooms');
-          db.Restroom.create(restrooms_list, (err, restrooms) => {
-               if (err) {
-                    console.log(err);
-                    return;
-               }
-               console.log('Recreated all restrooms');
-               console.log(`Created ${restrooms.length} restrooms`);
-          });
-     });
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log('Removed all cities');
+  db.City.create(cities_list, (err, cities) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('Recreated all cities');
+    console.log(`Created ${cities.length} cities`);
+  });
+
+  db.Restroom.deleteMany({}, (err, restrooms) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log('Removed all restrooms');
+    db.Restroom.create(restrooms_list, (err, restrooms) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log('Recreated all restrooms');
+      console.log(`Created ${restrooms.length} restrooms`);
+    });
+  });
 });
