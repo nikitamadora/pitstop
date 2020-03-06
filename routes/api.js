@@ -17,6 +17,7 @@ router.get('/cities', ctrl.city.index);
 // router.get('/cities/:id', ctrl.city.show);
 // router.post('/cities', ctrl.city.create);
 router.put('/cities/:id', ctrl.city.update);
+router.delete('/cities/:id', ctrl.city.destroy);
 
 // -----------------------ß
 //    Restrooms Routes

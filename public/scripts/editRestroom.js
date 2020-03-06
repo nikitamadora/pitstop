@@ -17,7 +17,6 @@ const restroomId = window.location.pathname.split('/')[3];
 fetch(`/api/v1/restrooms/${restroomId}`)
   .then((stream) => stream.json())
   .then((data) => {
-    console.log(data);
     locationName.value = data.locationName;
     streetName.value = data.streetAddress;
     cityName.value = data.cityState;
@@ -82,20 +81,26 @@ const deleteForeverButton = document.querySelector('#delete-button');
 deleteForeverButton.addEventListener('click', (e) => {
   e.preventDefault();
 
+  // Deletes restroom from /api/v1/restrooms/:id endpoint
   fetch(`/api/v1/restrooms/${restroomId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+  .catch((err) => console.log(err));
+
+  // Deletes restroom from /api/v1/cities/:id endpoint
+  fetch(`/api/v1/cities/${restroomId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
   })
-  .then((data) => {
-    console.log(data.json());
-  })
   .catch((err) => console.log(err));
 
-  console.log('Entry was deleted!');
   alert('Hope you meant it! It\'s gone FOREVER!');
-  // window.location = '/';
+  window.location = '/';
 });
 
 // /delete

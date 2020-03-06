@@ -32,6 +32,32 @@ const update = (req, res) => {
   });
 };
 
+const destroy = (req, res) => {
+  db.City.findOne({ cityState: req.body.cityState }, (err, foundCity)=> {
+    if (err) {
+      return res.status(400).json({ status: 400, error: "Something went wrong, please try again!"});
+    };
+    console.log(foundCity);
+  //   for (let i = 0; i < foundCity.restrooms.length; i++) {
+  //     const targetRestroom = foundCity.restrooms[i];
+  //     if (foundCity.restrooms[i].id === req.params.id) {
+  //       targetRestroom.remove();
+  //     }
+  //     else {
+  //       console.log("Nope, try again!");
+  //     }
+  //   };
+
+  //   foundCity.save((err, savedCity) => {
+  //     if (err) return res.status(400).json({ status: 400, error: 'Something went wrong, please try again'});
+    
+  //     console.log(savedCity);
+  //   });
+    
+  });
+};
+
 module.exports = {
   index,
-  update };
+  update,
+  destroy };
