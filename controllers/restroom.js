@@ -65,7 +65,7 @@ const create = (req, res) => {
   });
 };
 
-
+// Updates the restroom in the db, but not in the city
 const update = (req, res) => {
      db.Restroom.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedRestroom) => {
           if (err) {

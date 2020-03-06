@@ -47,10 +47,21 @@ formEl.addEventListener('submit', (e) => {
     genderNeutral: genderNeutral.value,
     changingStation: changingStation.value,
     reqPurchase: reqPurchase.value,
-    sanitaryProducts: sanitaryProducts.value,
-    // starRating: star_rating.value
+    sanitaryProducts: sanitaryProducts.value
   };
 
+  // Updates the restroom in the restroom db, but not in the city
+  fetch(`/api/v1/cities/${restroomId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(editedRestroom)
+  })
+  .then((stream) => stream.json())
+  .catch((err) => console.log(err));
+  
+  // Updates the restroom in the city
   fetch(`/api/v1/restrooms/${restroomId}`, {
     method: 'PUT',
     headers: {
@@ -59,11 +70,10 @@ formEl.addEventListener('submit', (e) => {
     body: JSON.stringify(editedRestroom)
   })
   .then((stream) => stream.json())
-  .then((data) => {
-    console.log(data);
-  })
   .catch((err) => console.log(err));
-  console.log('Restroom updated!');
+
+  alert('Thank you for your update!');
+  window.location = '/';
 });
 // /submit
 
@@ -84,6 +94,8 @@ deleteForeverButton.addEventListener('click', (e) => {
   .catch((err) => console.log(err));
 
   console.log('Entry was deleted!');
-  alert('Hope you meant it! It\'s gone for-heckin-ever!');
-  window.location = '/';
+  alert('Hope you meant it! It\'s gone FOREVER!');
+  // window.location = '/';
 });
+
+// /delete
