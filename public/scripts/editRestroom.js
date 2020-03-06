@@ -59,11 +59,19 @@ formEl.addEventListener('submit', (e) => {
     body: JSON.stringify(editedRestroom)
   })
   .then((stream) => stream.json())
-  .then((data) => {
-    console.log(data);
-  })
   .catch((err) => console.log(err));
   
+  // Updates the restroom in the city
+  fetch(`/api/v1/restrooms/${restroomId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(editedRestroom)
+  })
+  .then((stream) => stream.json())
+  .catch((err) => console.log(err));
+
   alert('Thank you for your update!');
   window.location = '/';
 });
@@ -87,7 +95,7 @@ deleteForeverButton.addEventListener('click', (e) => {
 
   console.log('Entry was deleted!');
   alert('Hope you meant it! It\'s gone FOREVER!');
-  window.location = '/';
+  // window.location = '/';
 });
 
 // /delete
