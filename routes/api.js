@@ -27,7 +27,7 @@ router.get('/restrooms', ctrl.restroom.index);
 router.get('/restrooms/:id', ctrl.restroom.show);
 router.post('/restrooms/new', ctrl.restroom.create);
 router.put('/restrooms/:id', ctrl.restroom.update);
-router.delete('/restrooms/:id', ctrl.restroom.destroy);
+// router.delete('/restrooms/:id', ctrl.restroom.destroy);
 
 // -----------------------
 //      Export Router

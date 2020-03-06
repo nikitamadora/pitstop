@@ -76,31 +76,29 @@ formEl.addEventListener('submit', (e) => {
 });
 // /submit
 
+
 const deleteForeverButton = document.querySelector('#delete-button');
 
 deleteForeverButton.addEventListener('click', (e) => {
   e.preventDefault();
 
   // Deletes restroom from /api/v1/restrooms/:id endpoint
-  fetch(`/api/v1/restrooms/${restroomId}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  })
-  .catch((err) => console.log(err));
+  // fetch(`/api/v1/restrooms/${restroomId}`, {
+  //   method: 'DELETE',
+  // })
+  // .catch((err) => console.log(err));
 
   // Deletes restroom from /api/v1/cities/:id endpoint
   fetch(`/api/v1/cities/${restroomId}`, {
     method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+  })
+  .then((data) => {
+    console.log("Deleted city!")
   })
   .catch((err) => console.log(err));
 
-  alert('Hope you meant it! It\'s gone FOREVER!');
-  window.location = '/';
+  // alert('Hope you meant it! It\'s gone FOREVER!');
+  // window.location = '/';
 });
 
 // /delete
