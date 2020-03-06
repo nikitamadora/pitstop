@@ -1,4 +1,7 @@
 # PitStop
+## A Responsive Web App For Finding Publicly Available Restrooms
+### Version 1.0
+<hr>
 
 ## Presentation
 Life is full of surprises. And sometimes, it can be really useful to know where is located the nearest restrooms!
