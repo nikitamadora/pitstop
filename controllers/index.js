@@ -1,1 +1,4 @@
-// Kita wants to stub this
+module.exports = {
+     city: require('./city'),
+     restroom: require('./restroom')
+};
